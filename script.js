@@ -2,14 +2,14 @@
 const toggleButton = document.getElementById('theme-toggle');
 const body = document.body;
 
-// Check if a theme was previously set in localStorage
+// Load saved theme from localStorage
 if (localStorage.getItem('theme') === 'dark') {
     body.classList.add('dark');
 }
 
 // Function to toggle theme
 toggleButton.addEventListener('click', () => {
-    // Add a smooth transition class
+    // Add smooth transition
     body.classList.add('transition');
 
     // Toggle dark class
@@ -22,8 +22,8 @@ toggleButton.addEventListener('click', () => {
         localStorage.setItem('theme', 'light');
     }
 
-    // Remove transition class after animation ends
+    // Remove transition class after animation
     setTimeout(() => {
         body.classList.remove('transition');
-    }, 500); // Matches the CSS transition duration
+    }, 500); // Matches CSS transition duration
 });
